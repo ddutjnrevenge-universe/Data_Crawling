@@ -1,0 +1,139 @@
+[2024-06-27T03:44:56.531+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-27T03:44:56.563+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-27T03:44:32.621725+00:00 [queued]>
+[2024-06-27T03:44:56.576+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-27T03:44:32.621725+00:00 [queued]>
+[2024-06-27T03:44:56.577+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-27T03:44:56.598+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load> on 2024-06-27 03:44:32.621725+00:00
+[2024-06-27T03:44:56.633+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_dag', 'load', 'manual__2024-06-27T03:44:32.621725+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp3v6v9xqu']
+[2024-06-27T03:44:56.637+0000] {standard_task_runner.py:91} INFO - Job 22: Subtask load
+[2024-06-27T03:44:56.639+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2195) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-27T03:44:56.642+0000] {standard_task_runner.py:63} INFO - Started process 2197 to run task
+[2024-06-27T03:44:56.693+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_dag.load manual__2024-06-27T03:44:32.621725+00:00 [running]> on host e05dad425a09
+[2024-06-27T03:44:56.806+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dag' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-06-27T03:44:32.621725+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-27T03:44:32.621725+00:00'
+[2024-06-27T03:44:56.807+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-27T03:44:56.851+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/google/cloud/firestore_v1/base_collection.py:302 UserWarning: Detected filter using positional arguments. Prefer using the 'filter' keyword argument instead.
+[2024-06-27T03:44:57.675+0000] {logging_mixin.py:188} INFO - Document with title 'Đời là cát, bụi là ta' already exists, updated the document.
+[2024-06-27T03:44:58.022+0000] {logging_mixin.py:188} INFO - File with name 'Đời_là_cát,_bụi_là_ta.pdf' already exists in the storage.
+[2024-06-27T03:44:58.256+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Vịnh 18 (Lễ Thánh Phêrô & Phaolô)' already exists, updated the document.
+[2024-06-27T03:44:58.359+0000] {logging_mixin.py:188} INFO - File with name 'Thánh_Vịnh_18_(Lễ_Thánh_Phêrô_&_Phaolô).pdf' already exists in the storage.
+[2024-06-27T03:44:58.600+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Vịnh 33 (Mừng thánh phêrô & phaolô)' already exists, updated the document.
+[2024-06-27T03:44:58.738+0000] {logging_mixin.py:188} INFO - File with name 'Thánh_Vịnh_33_(Mừng_thánh_phêrô_&_phaolô).pdf' already exists in the storage.
+[2024-06-27T03:44:58.989+0000] {logging_mixin.py:188} INFO - Document with title 'Xin Thánh Cả Phêrô' already exists, updated the document.
+[2024-06-27T03:44:59.092+0000] {logging_mixin.py:188} INFO - File with name 'Xin_Thánh_Cả_Phêrô.pdf' already exists in the storage.
+[2024-06-27T03:44:59.284+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Tông đồ' already exists, updated the document.
+[2024-06-27T03:44:59.390+0000] {logging_mixin.py:188} INFO - File with name 'Thánh_Tông_đồ.pdf' already exists in the storage.
+[2024-06-27T03:44:59.573+0000] {logging_mixin.py:188} INFO - Document with title 'Phêrô Con Là đá' already exists, updated the document.
+[2024-06-27T03:44:59.676+0000] {logging_mixin.py:188} INFO - File with name 'Phêrô_Con_Là_đá.pdf' already exists in the storage.
+[2024-06-27T03:44:59.877+0000] {logging_mixin.py:188} INFO - Document with title 'ông Phêrô' already exists, updated the document.
+[2024-06-27T03:44:59.978+0000] {logging_mixin.py:188} INFO - File with name 'ông_Phêrô.pdf' already exists in the storage.
+[2024-06-27T03:45:00.170+0000] {logging_mixin.py:188} INFO - Document with title 'Mừng Hai Thánh Tông đồ' already exists, updated the document.
+[2024-06-27T03:45:00.268+0000] {logging_mixin.py:188} INFO - File with name 'Mừng_Hai_Thánh_Tông_đồ.pdf' already exists in the storage.
+[2024-06-27T03:45:00.456+0000] {logging_mixin.py:188} INFO - Document with title 'Hai Vị Tông đồ' already exists, updated the document.
+[2024-06-27T03:45:00.560+0000] {logging_mixin.py:188} INFO - File with name 'Hai_Vị_Tông_đồ.pdf' already exists in the storage.
+[2024-06-27T03:45:00.748+0000] {logging_mixin.py:188} INFO - Document with title 'Hai Người Tiên Phong' already exists, updated the document.
+[2024-06-27T03:45:00.856+0000] {logging_mixin.py:188} INFO - File with name 'Hai_Người_Tiên_Phong.pdf' already exists in the storage.
+[2024-06-27T03:45:01.064+0000] {logging_mixin.py:188} INFO - Document with title 'Ca Hiệp Lễ (Chúa Nhật tuần 13)' already exists, updated the document.
+[2024-06-27T03:45:01.166+0000] {logging_mixin.py:188} INFO - File with name 'Ca_Hiệp_Lễ_(Chúa_Nhật_tuần_13).pdf' already exists in the storage.
+[2024-06-27T03:45:01.348+0000] {logging_mixin.py:188} INFO - Document with title 'Ra Về An Bình' already exists, updated the document.
+[2024-06-27T03:45:01.448+0000] {logging_mixin.py:188} INFO - File with name 'Ra_Về_An_Bình.pdf' already exists in the storage.
+[2024-06-27T03:45:01.637+0000] {logging_mixin.py:188} INFO - Document with title 'Nếu Con Có đức Tin' already exists, updated the document.
+[2024-06-27T03:45:01.742+0000] {logging_mixin.py:188} INFO - File with name 'Nếu_Con_Có_đức_Tin.pdf' already exists in the storage.
+[2024-06-27T03:45:01.926+0000] {logging_mixin.py:188} INFO - Document with title 'Hiệp Dâng' already exists, updated the document.
+[2024-06-27T03:45:02.031+0000] {logging_mixin.py:188} INFO - File with name 'Hiệp_Dâng.pdf' already exists in the storage.
+[2024-06-27T03:45:02.228+0000] {logging_mixin.py:188} INFO - Document with title 'Tiến Vào Thánh Cung' already exists, updated the document.
+[2024-06-27T03:45:02.331+0000] {logging_mixin.py:188} INFO - File with name 'Tiến_Vào_Thánh_Cung.pdf' already exists in the storage.
+[2024-06-27T03:45:02.527+0000] {logging_mixin.py:188} INFO - Document with title 'Rất cần anh trên phía những vần thơ' already exists, updated the document.
+[2024-06-27T03:45:02.633+0000] {logging_mixin.py:188} INFO - File with name 'Rất_cần_anh_trên_phía_những_vần_thơ.pdf' already exists in the storage.
+[2024-06-27T03:45:02.827+0000] {logging_mixin.py:188} INFO - Document with title 'Xa rồi nội ơi' already exists, updated the document.
+[2024-06-27T03:45:02.928+0000] {logging_mixin.py:188} INFO - File with name 'Xa_rồi_nội_ơi.pdf' already exists in the storage.
+[2024-06-27T03:45:03.112+0000] {logging_mixin.py:188} INFO - Document with title 'Về đâu' already exists, updated the document.
+[2024-06-27T03:45:03.218+0000] {logging_mixin.py:188} INFO - File with name 'Về_đâu.pdf' already exists in the storage.
+[2024-06-27T03:45:03.405+0000] {logging_mixin.py:188} INFO - Document with title 'Dĩ vãng buồn' already exists, updated the document.
+[2024-06-27T03:45:03.505+0000] {logging_mixin.py:188} INFO - File with name 'Dĩ_vãng_buồn.pdf' already exists in the storage.
+[2024-06-27T03:45:03.713+0000] {logging_mixin.py:188} INFO - Document with title 'Ru lời tình bay' already exists, updated the document.
+[2024-06-27T03:45:03.816+0000] {logging_mixin.py:188} INFO - File with name 'Ru_lời_tình_bay.pdf' already exists in the storage.
+[2024-06-27T03:45:04.016+0000] {logging_mixin.py:188} INFO - Document with title 'Đưa em vào luân vũ' already exists, updated the document.
+[2024-06-27T03:45:04.125+0000] {logging_mixin.py:188} INFO - File with name 'Đưa_em_vào_luân_vũ.pdf' already exists in the storage.
+[2024-06-27T03:45:04.313+0000] {logging_mixin.py:188} INFO - Document with title 'Cho con thấy Chúa' already exists, updated the document.
+[2024-06-27T03:45:04.418+0000] {logging_mixin.py:188} INFO - File with name 'Cho_con_thấy_Chúa.pdf' already exists in the storage.
+[2024-06-27T03:45:04.615+0000] {logging_mixin.py:188} INFO - Document with title 'Nàng thơ xứ huế' already exists, updated the document.
+[2024-06-27T03:45:04.723+0000] {logging_mixin.py:188} INFO - File with name 'Nàng_thơ_xứ_huế.pdf' already exists in the storage.
+[2024-06-27T03:45:04.906+0000] {logging_mixin.py:188} INFO - Document with title 'Vinh quang Chúa' already exists, updated the document.
+[2024-06-27T03:45:05.009+0000] {logging_mixin.py:188} INFO - File with name 'Vinh_quang_Chúa.pdf' already exists in the storage.
+[2024-06-27T03:45:05.198+0000] {logging_mixin.py:188} INFO - Document with title 'Hương xuân' already exists, updated the document.
+[2024-06-27T03:45:05.301+0000] {logging_mixin.py:188} INFO - File with name 'Hương_xuân.pdf' already exists in the storage.
+[2024-06-27T03:45:05.490+0000] {logging_mixin.py:188} INFO - Document with title 'Tìm về bến giác' already exists, updated the document.
+[2024-06-27T03:45:05.601+0000] {logging_mixin.py:188} INFO - File with name 'Tìm_về_bến_giác.pdf' already exists in the storage.
+[2024-06-27T03:45:05.801+0000] {logging_mixin.py:188} INFO - Document with title 'Một cõi riêng tư' already exists, updated the document.
+[2024-06-27T03:45:05.900+0000] {logging_mixin.py:188} INFO - File with name 'Một_cõi_riêng_tư.pdf' already exists in the storage.
+[2024-06-27T03:45:06.085+0000] {logging_mixin.py:188} INFO - Document with title 'Đừng để Con đơn Hành' already exists, updated the document.
+[2024-06-27T03:45:06.200+0000] {logging_mixin.py:188} INFO - File with name 'Đừng_để_Con_đơn_Hành.pdf' already exists in the storage.
+[2024-06-27T03:45:06.398+0000] {logging_mixin.py:188} INFO - Document with title 'Ngài Là Ai? (Chúa Nhật 12 B)' already exists, updated the document.
+[2024-06-27T03:45:06.502+0000] {logging_mixin.py:188} INFO - File with name 'Ngài_Là_Ai?_(Chúa_Nhật_12_B).pdf' already exists in the storage.
+[2024-06-27T03:45:06.689+0000] {logging_mixin.py:188} INFO - Document with title 'Xin Chúa Giữ Con, Thánh Vịnh 16' already exists, updated the document.
+[2024-06-27T03:45:06.792+0000] {logging_mixin.py:188} INFO - File with name 'Xin_Chúa_Giữ_Con,_Thánh_Vịnh_16.pdf' already exists in the storage.
+[2024-06-27T03:45:06.995+0000] {logging_mixin.py:188} INFO - Document with title 'Chúa Vẫn Ngủ Say' already exists, updated the document.
+[2024-06-27T03:45:07.098+0000] {logging_mixin.py:188} INFO - File with name 'Chúa_Vẫn_Ngủ_Say.pdf' already exists in the storage.
+[2024-06-27T03:45:07.299+0000] {logging_mixin.py:188} INFO - Document with title 'Sao Sợ Hãi (Chúa Nhật 12 B)' already exists, updated the document.
+[2024-06-27T03:45:07.414+0000] {logging_mixin.py:188} INFO - File with name 'Sao_Sợ_Hãi_(Chúa_Nhật_12_B).pdf' already exists in the storage.
+[2024-06-27T03:45:07.626+0000] {logging_mixin.py:188} INFO - Document with title 'Biển đời Giông Tố (Chúa Nhật 12 B)' already exists, updated the document.
+[2024-06-27T03:45:07.729+0000] {logging_mixin.py:188} INFO - File with name 'Biển_đời_Giông_Tố_(Chúa_Nhật_12_B).pdf' already exists in the storage.
+[2024-06-27T03:45:07.916+0000] {logging_mixin.py:188} INFO - Document with title 'Hiến Lễ đời Con' already exists, updated the document.
+[2024-06-27T03:45:08.018+0000] {logging_mixin.py:188} INFO - File with name 'Hiến_Lễ_đời_Con.pdf' already exists in the storage.
+[2024-06-27T03:45:08.206+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Vịnh 106 Chúa Nhật 12 Thường Niên B' already exists, updated the document.
+[2024-06-27T03:45:08.311+0000] {logging_mixin.py:188} INFO - File with name 'Thánh_Vịnh_106_Chúa_Nhật_12_Thường_Niên_B.pdf' already exists in the storage.
+[2024-06-27T03:45:08.498+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Vịnh 106 (Chúa Nhật 12 Thường Niên B)' already exists, updated the document.
+[2024-06-27T03:45:08.602+0000] {logging_mixin.py:188} INFO - File with name 'Thánh_Vịnh_106_(Chúa_Nhật_12_Thường_Niên_B).pdf' already exists in the storage.
+[2024-06-27T03:45:08.802+0000] {logging_mixin.py:188} INFO - Document with title 'Chúa Chiên Nhân Lành' already exists, updated the document.
+[2024-06-27T03:45:08.905+0000] {logging_mixin.py:188} INFO - File with name 'Chúa_Chiên_Nhân_Lành.pdf' already exists in the storage.
+[2024-06-27T03:45:09.096+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Vịnh 27, Ca Nhập Lễ Chúa Nhật 12 Thường Niên B' already exists, updated the document.
+[2024-06-27T03:45:09.206+0000] {logging_mixin.py:188} INFO - File with name 'Thánh_Vịnh_27,_Ca_Nhập_Lễ_Chúa_Nhật_12_Thường_Niên_B.pdf' already exists in the storage.
+[2024-06-27T03:45:09.450+0000] {logging_mixin.py:188} INFO - Document with title 'Nắng đẹp miền Nam' already exists, updated the document.
+[2024-06-27T03:45:09.555+0000] {logging_mixin.py:188} INFO - File with name 'Nắng_đẹp_miền_Nam.pdf' already exists in the storage.
+[2024-06-27T03:45:09.774+0000] {logging_mixin.py:188} INFO - Document with title 'Trở lại' already exists, updated the document.
+[2024-06-27T03:45:09.886+0000] {logging_mixin.py:188} INFO - File with name 'Trở_lại.pdf' already exists in the storage.
+[2024-06-27T03:45:10.079+0000] {logging_mixin.py:188} INFO - Document with title 'Khi em không còn yêu tôi' already exists, updated the document.
+[2024-06-27T03:45:10.180+0000] {logging_mixin.py:188} INFO - File with name 'Khi_em_không_còn_yêu_tôi.pdf' already exists in the storage.
+[2024-06-27T03:45:10.367+0000] {logging_mixin.py:188} INFO - Document with title 'Yêu có về trăm năm' already exists, updated the document.
+[2024-06-27T03:45:10.468+0000] {logging_mixin.py:188} INFO - File with name 'Yêu_có_về_trăm_năm.pdf' already exists in the storage.
+[2024-06-27T03:45:10.663+0000] {logging_mixin.py:188} INFO - Document with title 'Mộ tình' already exists, updated the document.
+[2024-06-27T03:45:10.767+0000] {logging_mixin.py:188} INFO - File with name 'Mộ_tình.pdf' already exists in the storage.
+[2024-06-27T03:45:10.959+0000] {logging_mixin.py:188} INFO - Document with title 'Ngày ấy còn đâu' already exists, updated the document.
+[2024-06-27T03:45:11.062+0000] {logging_mixin.py:188} INFO - File with name 'Ngày_ấy_còn_đâu.pdf' already exists in the storage.
+[2024-06-27T03:45:11.246+0000] {logging_mixin.py:188} INFO - Document with title 'Sẽ có một ngày em trở về đây' already exists, updated the document.
+[2024-06-27T03:45:11.353+0000] {logging_mixin.py:188} INFO - File with name 'Sẽ_có_một_ngày_em_trở_về_đây.pdf' already exists in the storage.
+[2024-06-27T03:45:11.542+0000] {logging_mixin.py:188} INFO - Document with title 'Hồng trần như mộng' already exists, updated the document.
+[2024-06-27T03:45:11.641+0000] {logging_mixin.py:188} INFO - File with name 'Hồng_trần_như_mộng.pdf' already exists in the storage.
+[2024-06-27T03:45:11.845+0000] {logging_mixin.py:188} INFO - Document with title 'Mưa đêm' already exists, updated the document.
+[2024-06-27T03:45:11.960+0000] {logging_mixin.py:188} INFO - File with name 'Mưa_đêm.pdf' already exists in the storage.
+[2024-06-27T03:45:12.149+0000] {logging_mixin.py:188} INFO - Document with title 'Tuổi mình bây giờ' already exists, updated the document.
+[2024-06-27T03:45:12.256+0000] {logging_mixin.py:188} INFO - File with name 'Tuổi_mình_bây_giờ.pdf' already exists in the storage.
+[2024-06-27T03:45:12.458+0000] {logging_mixin.py:188} INFO - Document with title 'Thầy Chỉ Khác Ta' already exists, updated the document.
+[2024-06-27T03:45:12.557+0000] {logging_mixin.py:188} INFO - File with name 'Thầy_Chỉ_Khác_Ta.pdf' already exists in the storage.
+[2024-06-27T03:45:12.744+0000] {logging_mixin.py:188} INFO - Document with title 'Dòng đời ngược xuôi' already exists, updated the document.
+[2024-06-27T03:45:12.848+0000] {logging_mixin.py:188} INFO - File with name 'Dòng_đời_ngược_xuôi.pdf' already exists in the storage.
+[2024-06-27T03:45:13.040+0000] {logging_mixin.py:188} INFO - Document with title 'Nguyện dâng lên Chúa' already exists, updated the document.
+[2024-06-27T03:45:13.147+0000] {logging_mixin.py:188} INFO - File with name 'Nguyện_dâng_lên_Chúa.pdf' already exists in the storage.
+[2024-06-27T03:45:13.335+0000] {logging_mixin.py:188} INFO - Document with title 'Người gieo mầm xanh' already exists, updated the document.
+[2024-06-27T03:45:13.443+0000] {logging_mixin.py:188} INFO - File with name 'Người_gieo_mầm_xanh.pdf' already exists in the storage.
+[2024-06-27T03:45:13.651+0000] {logging_mixin.py:188} INFO - Document with title 'Tình khúc tháng sáu' already exists, updated the document.
+[2024-06-27T03:45:13.758+0000] {logging_mixin.py:188} INFO - File with name 'Tình_khúc_tháng_sáu.pdf' already exists in the storage.
+[2024-06-27T03:45:13.952+0000] {logging_mixin.py:188} INFO - Document with title 'Tình Chúa yêu con' already exists, updated the document.
+[2024-06-27T03:45:14.055+0000] {logging_mixin.py:188} INFO - File with name 'Tình_Chúa_yêu_con.pdf' already exists in the storage.
+[2024-06-27T03:45:14.241+0000] {logging_mixin.py:188} INFO - Document with title 'Vì ngoài Chúa ra' already exists, updated the document.
+[2024-06-27T03:45:14.341+0000] {logging_mixin.py:188} INFO - File with name 'Vì_ngoài_Chúa_ra.pdf' already exists in the storage.
+[2024-06-27T03:45:14.534+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh vịnh 127' already exists, updated the document.
+[2024-06-27T03:45:14.691+0000] {logging_mixin.py:188} INFO - File with name 'Thánh_vịnh_127.pdf' already exists in the storage.
+[2024-06-27T03:45:14.873+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh vịnh 129' already exists, updated the document.
+[2024-06-27T03:45:14.978+0000] {logging_mixin.py:188} INFO - File with name 'Thánh_vịnh_129.pdf' already exists in the storage.
+[2024-06-27T03:45:15.181+0000] {logging_mixin.py:188} INFO - Document with title 'Cảm mến ân tình' already exists, updated the document.
+[2024-06-27T03:45:15.287+0000] {logging_mixin.py:188} INFO - File with name 'Cảm_mến_ân_tình.pdf' already exists in the storage.
+[2024-06-27T03:45:15.473+0000] {logging_mixin.py:188} INFO - Document with title 'Trông cậy Chúa' already exists, updated the document.
+[2024-06-27T03:45:15.575+0000] {logging_mixin.py:188} INFO - File with name 'Trông_cậy_Chúa.pdf' already exists in the storage.
+[2024-06-27T03:45:15.766+0000] {logging_mixin.py:188} INFO - Document with title 'Con đường Chúa đã đi qua' already exists, updated the document.
+[2024-06-27T03:45:15.868+0000] {logging_mixin.py:188} INFO - File with name 'Con_đường_Chúa_đã_đi_qua.pdf' already exists in the storage.
+[2024-06-27T03:45:15.869+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-27T03:45:15.870+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-27T03:45:15.892+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=etl_dag, task_id=load, run_id=manual__2024-06-27T03:44:32.621725+00:00, execution_date=20240627T034432, start_date=20240627T034456, end_date=20240627T034515
+[2024-06-27T03:45:15.961+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-27T03:45:15.988+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-27T03:45:15.992+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

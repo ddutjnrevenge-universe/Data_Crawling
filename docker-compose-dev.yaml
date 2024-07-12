@@ -1,0 +1,79 @@
+version: 'version_1'
+
+### AIRFLOW ###
+x-airflow-common:
+  &airflow
+  image: apache/airflow:slim-2.5.0rc2-python3.10
+  environment:
+    &airflow-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    _AIRFLOW_DB_MIGRATE: 'true'
+    _AIRFLOW_WWW_USER_CREATE: 'true'
+    _AIRFLOW_WWW_USER_USERNAME: airflow
+    _AIRFLOW_WWW_USER_PASSWORD: airflow
+
+  user: "${AIRFLOW_UID:-50000}:0"
+  volumes:
+    - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
+    - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
+  depends_on:
+    &airflow-depends-on
+    postgres:
+        condition: service_healthy
+
+services:
+
+### AIRFLOW WEBSERVER ###
+  airflow-webserver:
+    <<: *airflow
+    container_name: airflow-webserver
+    ports:
+      - 8081:8080
+    healthcheck:
+      test: ["CMD", "curl","--fail","http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    entrypoint: /bin/bash -c "airflow db init && airflow webserver"
+    restart: 'always'
+    depends_on:
+      <<: *airflow-depends-on
+
+### AIRFLOW SCHEDULER ###
+  airflow-scheduler:
+    <<: *airflow
+    container_name: airflow_scheduler
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: 'always'
+    entrypoint: /bin/bash -c "airflow scheduler"
+    depends_on:
+      <<: *airflow-depends-on
+
+### POSTGRES ###
+  postgres:
+    image: postgres:9.6.22-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready","-U","airflow"] # Same with pg_isready -U airflows
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
+  
+volumes:
+  postgres-db-volume:

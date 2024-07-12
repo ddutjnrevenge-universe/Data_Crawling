@@ -1,0 +1,80 @@
+[2024-06-05T17:00:34.574+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T17:00:34.604+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-05T17:00:10.787214+00:00 [queued]>
+[2024-06-05T17:00:34.614+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-05T17:00:10.787214+00:00 [queued]>
+[2024-06-05T17:00:34.615+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-05T17:00:34.636+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load> on 2024-06-05 17:00:10.787214+00:00
+[2024-06-05T17:00:34.654+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=432) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-05T17:00:34.655+0000] {standard_task_runner.py:63} INFO - Started process 438 to run task
+[2024-06-05T17:00:34.653+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_dag', 'load', 'manual__2024-06-05T17:00:10.787214+00:00', '--job-id', '338', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp2ujk66qi']
+[2024-06-05T17:00:34.656+0000] {standard_task_runner.py:91} INFO - Job 338: Subtask load
+[2024-06-05T17:00:34.674+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-05T17:00:34.709+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_dag.load manual__2024-06-05T17:00:10.787214+00:00 [running]> on host aa989158b36e
+[2024-06-05T17:00:34.809+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dag' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-06-05T17:00:10.787214+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-05T17:00:10.787214+00:00'
+[2024-06-05T17:00:34.811+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T17:00:34.843+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/google/cloud/firestore_v1/base_collection.py:302 UserWarning: Detected filter using positional arguments. Prefer using the 'filter' keyword argument instead.
+[2024-06-05T17:00:35.944+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Vịnh 138 (Thánh Gioan Baotixita)' already exists, updated the document.
+[2024-06-05T17:00:36.048+0000] {logging_mixin.py:188} INFO - {'title': 'Thánh Vịnh 138 (Thánh Gioan Tẩy Giả)', 'author': 'Thái Nguyên', 'lyrics': 'ĐK: Tạ ơn Chúa  tạ ơn Chúa đã dựng nên con cách lạ lùng.  1. Chúa đã dò xét con và Ngài đã biết, biết con khi đứng khi ngồi, biết con suy nghĩ những gì, biết con trên muôn nẻo đường, biết con trên dặm hành hương.   2. Chúa đã tạo tác con từ trong thai mẫu, nắn con trong tấm thân này. Cất lên câu tán dương Ngài, tác nên thân con lạ lùng, biết bao nhiêu là kỳ công.   3. Chúa có lạ lẫm chi này hồn con đây, Chúa luôn thấu suốt am tường, biết con xương cốt vẹn toàn, lúc con sinh ra âm thầm, biết bao nhiêu là tình thâm.      ⬤\xa0Tung hô Tin Mừng: Alleluia, Alleluia. Hỡi thơ nhi, con sẽ được gọi là tiên tri của Đấng Tối Cao. Con sẽ ra đi trước mặt Chúa mở lối cho người. Alleluia, Alleluia.* Link tải PDF từ Google Drive', 'original_url': 'https://nhacnheo.com/images/sheet/pdf/thanh-vinh-138-t-gioan-b-thai-nguyen-nhacnheo.com.pdf', 'braille_url': None, 'timestamp': Sentinel: Value used to set a document field to the server timestamp.}
+[2024-06-05T17:00:36.398+0000] {logging_mixin.py:188} INFO - {'title': 'Chúa đã Gọi Tôi', 'author': 'Thái Nguyên', 'lyrics': '1. Chúa đã gọi tôi từ khi tôi còn lòng mẹ. Ngài nhớ đến tôi khi tôi còn trong thai mẹ. Ngài cho miệng tôi nên như ngọn gươm bén nên như mũi tên nhọn. Ngài giữ gìn tôi an vui dưới tay của Ngài.  ĐK. Tôi ca ngợi Chúa vì tôi đã được tác thành cách lạ lùng.\xa0Công việc của Chúa thật lớn lao và luôn kỳ diệu biết bao.  2. Chúa phán cùng tôi từ nay tôi thuộc về Ngài. Ngài đã sai tôi đem Tin Mừng cho khắp nơi. Trở nên ánh sáng cho muôn người soi lối trong đêm tối mịt mù. Và sức mạnh tôi luôn trong cánh tay của Ngài.  3. Chúa tác thành tôi một cách ôi thật lạ lùng. Tình chúa bao dung khi tôi cũng không đáng gì. Và tôi ra đi loan Tin Mừng cứu rỗi can chi nỗi nhọc nhằn. Vì Chúa hằng luôn bao che đỡ nâng đời tôi.* Link tải PDF từ Google Drive', 'original_url': 'https://nhacnheo.com/images/sheet/pdf/chua-da-goi-toi-thai-nguyen-nhacnheo.com.pdf', 'braille_url': None, 'timestamp': Sentinel: Value used to set a document field to the server timestamp.}
+[2024-06-05T17:00:36.718+0000] {logging_mixin.py:188} INFO - Document with title 'Hẹn em ở lần yêu thứ 2' already exists, updated the document.
+[2024-06-05T17:00:36.907+0000] {logging_mixin.py:188} INFO - Document with title 'Mưa đêm' already exists, updated the document.
+[2024-06-05T17:00:37.116+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Vịnh 44 (15.8)' already exists, updated the document.
+[2024-06-05T17:00:37.308+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Vịnh 44 (15.8)' already exists, updated the document.
+[2024-06-05T17:00:37.480+0000] {logging_mixin.py:188} INFO - Document with title 'Ca Khúc Tương Tiến (tv 44)' already exists, updated the document.
+[2024-06-05T17:00:37.646+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Vịnh 44' already exists, updated the document.
+[2024-06-05T17:00:37.816+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Vịnh 44 (15.8)' already exists, updated the document.
+[2024-06-05T17:00:38.024+0000] {logging_mixin.py:188} INFO - Document with title 'Lạy Mẹ Vô Nhiễm Nguyên Tội' already exists, updated the document.
+[2024-06-05T17:00:38.187+0000] {logging_mixin.py:188} INFO - Document with title 'Về Nơi đây' already exists, updated the document.
+[2024-06-05T17:00:38.355+0000] {logging_mixin.py:188} INFO - Document with title 'Nguyện Yêu Chúa' already exists, updated the document.
+[2024-06-05T17:00:38.521+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Tâm Giê' already exists, updated the document.
+[2024-06-05T17:00:38.696+0000] {logging_mixin.py:188} INFO - Document with title 'đến Với Trái Tim Ta' already exists, updated the document.
+[2024-06-05T17:00:38.870+0000] {logging_mixin.py:188} INFO - Document with title 'Một Người Lính' already exists, updated the document.
+[2024-06-05T17:00:39.039+0000] {logging_mixin.py:188} INFO - Document with title 'Hãy đến Với Ta (ttca)' already exists, updated the document.
+[2024-06-05T17:00:39.212+0000] {logging_mixin.py:188} INFO - Document with title 'Về Bên Thánh Tâm' already exists, updated the document.
+[2024-06-05T17:00:39.384+0000] {logging_mixin.py:188} INFO - Document with title 'ôi Tình Yêu Chúa' already exists, updated the document.
+[2024-06-05T17:00:39.554+0000] {logging_mixin.py:188} INFO - Document with title 'Suối Nguồn Tình Yêu' already exists, updated the document.
+[2024-06-05T17:00:39.721+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Ca ISAIA (Is 12)' already exists, updated the document.
+[2024-06-05T17:00:39.906+0000] {logging_mixin.py:188} INFO - Document with title 'Internet love' already exists, updated the document.
+[2024-06-05T17:00:40.070+0000] {logging_mixin.py:188} INFO - Document with title 'César và Thiên Chúa' already exists, updated the document.
+[2024-06-05T17:00:40.245+0000] {logging_mixin.py:188} INFO - Document with title 'Chờ ngày lời hứa nở hoa' already exists, updated the document.
+[2024-06-05T17:00:40.413+0000] {logging_mixin.py:188} INFO - Document with title 'Kinh cầu cho thế giới' already exists, updated the document.
+[2024-06-05T17:00:40.582+0000] {logging_mixin.py:188} INFO - Document with title 'Tình Ngài cho con' already exists, updated the document.
+[2024-06-05T17:00:40.758+0000] {logging_mixin.py:188} INFO - Document with title 'Giọt nước mắt tạ ơn' already exists, updated the document.
+[2024-06-05T17:00:40.925+0000] {logging_mixin.py:188} INFO - Document with title 'Thu mãi quan san' already exists, updated the document.
+[2024-06-05T17:00:41.121+0000] {logging_mixin.py:188} INFO - Document with title 'Belem ơi' already exists, updated the document.
+[2024-06-05T17:00:41.304+0000] {logging_mixin.py:188} INFO - Document with title 'Giọt nắng Ban Mê' already exists, updated the document.
+[2024-06-05T17:00:41.564+0000] {logging_mixin.py:188} INFO - Document with title 'Cô phòng' already exists, updated the document.
+[2024-06-05T17:00:41.733+0000] {logging_mixin.py:188} INFO - Document with title 'Bài thương khó Chúa Giêsu' already exists, updated the document.
+[2024-06-05T17:00:41.915+0000] {logging_mixin.py:188} INFO - Document with title 'Chúa đã thương tôi' already exists, updated the document.
+[2024-06-05T17:00:42.087+0000] {logging_mixin.py:188} INFO - Document with title 'Sông đọa đày' already exists, updated the document.
+[2024-06-05T17:00:42.255+0000] {logging_mixin.py:188} INFO - Document with title 'Đế vương' already exists, updated the document.
+[2024-06-05T17:00:42.426+0000] {logging_mixin.py:188} INFO - Document with title 'Cảm mến ân tình' already exists, updated the document.
+[2024-06-05T17:00:42.589+0000] {logging_mixin.py:188} INFO - Document with title 'Chúa chăn nuôi tôi' already exists, updated the document.
+[2024-06-05T17:00:42.751+0000] {logging_mixin.py:188} INFO - Document with title 'Giai khúc dâng tiến 2' already exists, updated the document.
+[2024-06-05T17:00:42.923+0000] {logging_mixin.py:188} INFO - Document with title 'Bài ca xuân tặng người' already exists, updated the document.
+[2024-06-05T17:00:43.097+0000] {logging_mixin.py:188} INFO - Document with title 'Sài Gòn của em của anh' already exists, updated the document.
+[2024-06-05T17:00:43.274+0000] {logging_mixin.py:188} INFO - Document with title 'Có hẹn với thanh xuân' already exists, updated the document.
+[2024-06-05T17:00:43.450+0000] {logging_mixin.py:188} INFO - Document with title 'Hoài cảm' already exists, updated the document.
+[2024-06-05T17:00:43.617+0000] {logging_mixin.py:188} INFO - Document with title 'Ca khúc trầm hương' already exists, updated the document.
+[2024-06-05T17:00:43.787+0000] {logging_mixin.py:188} INFO - Document with title 'Bông hồng dâng Mẹ' already exists, updated the document.
+[2024-06-05T17:00:43.960+0000] {logging_mixin.py:188} INFO - Document with title 'Giọt nắng bên thềm' already exists, updated the document.
+[2024-06-05T17:00:44.134+0000] {logging_mixin.py:188} INFO - Document with title 'Thương ly biệt' already exists, updated the document.
+[2024-06-05T17:00:44.316+0000] {logging_mixin.py:188} INFO - Document with title 'Người gieo mầm xanh' already exists, updated the document.
+[2024-06-05T17:00:44.497+0000] {logging_mixin.py:188} INFO - Document with title 'Mẹ tôi' already exists, updated the document.
+[2024-06-05T17:00:44.675+0000] {logging_mixin.py:188} INFO - Document with title 'Lần hẹn hò đầu tiên' already exists, updated the document.
+[2024-06-05T17:00:44.866+0000] {logging_mixin.py:188} INFO - Document with title 'Để tôi ôm em bằng giai điệu này' already exists, updated the document.
+[2024-06-05T17:00:45.033+0000] {logging_mixin.py:188} INFO - Document with title 'Muộn phiền' already exists, updated the document.
+[2024-06-05T17:00:45.209+0000] {logging_mixin.py:188} INFO - Document with title 'Ăn năn tội mình' already exists, updated the document.
+[2024-06-05T17:00:45.377+0000] {logging_mixin.py:188} INFO - Document with title 'Đêm qua em mơ gặp Bác Hồ' already exists, updated the document.
+[2024-06-05T17:00:45.549+0000] {logging_mixin.py:188} INFO - Document with title 'Tiếng hát trên sông Lô' already exists, updated the document.
+[2024-06-05T17:00:45.726+0000] {logging_mixin.py:188} INFO - Document with title 'Bình ca 10 (Ngày sẽ tới)' already exists, updated the document.
+[2024-06-05T17:00:45.901+0000] {logging_mixin.py:188} INFO - Document with title 'Khi Jesus qua' already exists, updated the document.
+[2024-06-05T17:00:46.072+0000] {logging_mixin.py:188} INFO - Document with title 'Xin như làn mây trắng' already exists, updated the document.
+[2024-06-05T17:00:46.237+0000] {logging_mixin.py:188} INFO - Document with title 'Tiếng hát về đêm' already exists, updated the document.
+[2024-06-05T17:00:46.406+0000] {logging_mixin.py:188} INFO - Document with title 'Bài ca hiệp hành' already exists, updated the document.
+[2024-06-05T17:00:46.575+0000] {logging_mixin.py:188} INFO - Document with title 'Đất nước mình ngộ quá phải không anh?' already exists, updated the document.
+[2024-06-05T17:00:46.577+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-05T17:00:46.578+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T17:00:46.600+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=etl_dag, task_id=load, run_id=manual__2024-06-05T17:00:10.787214+00:00, execution_date=20240605T170010, start_date=20240605T170034, end_date=20240605T170046
+[2024-06-05T17:00:46.649+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T17:00:46.673+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-05T17:00:46.676+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

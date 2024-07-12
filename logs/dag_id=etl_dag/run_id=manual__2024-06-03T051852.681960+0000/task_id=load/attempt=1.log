@@ -1,0 +1,19 @@
+[2024-06-03T05:19:21.380+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-03T05:19:21.416+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-03T05:18:52.681960+00:00 [queued]>
+[2024-06-03T05:19:21.429+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-03T05:18:52.681960+00:00 [queued]>
+[2024-06-03T05:19:21.430+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-03T05:19:21.458+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load> on 2024-06-03 05:18:52.681960+00:00
+[2024-06-03T05:19:21.484+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=3279) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-03T05:19:21.484+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_dag', 'load', 'manual__2024-06-03T05:18:52.681960+00:00', '--job-id', '268', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpuh51dl02']
+[2024-06-03T05:19:21.488+0000] {standard_task_runner.py:91} INFO - Job 268: Subtask load
+[2024-06-03T05:19:21.487+0000] {standard_task_runner.py:63} INFO - Started process 3281 to run task
+[2024-06-03T05:19:21.510+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-03T05:19:21.545+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_dag.load manual__2024-06-03T05:18:52.681960+00:00 [running]> on host aa989158b36e
+[2024-06-03T05:19:21.653+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dag' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-06-03T05:18:52.681960+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-03T05:18:52.681960+00:00'
+[2024-06-03T05:19:21.655+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-03T05:19:21.687+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/google/cloud/firestore_v1/base_collection.py:302 UserWarning: Detected filter using positional arguments. Prefer using the 'filter' keyword argument instead.
+[2024-06-03T05:19:28.089+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-03T05:19:28.089+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-03T05:19:28.098+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=etl_dag, task_id=load, run_id=manual__2024-06-03T05:18:52.681960+00:00, execution_date=20240603T051852, start_date=20240603T051921, end_date=20240603T051928
+[2024-06-03T05:19:28.148+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-03T05:19:28.164+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

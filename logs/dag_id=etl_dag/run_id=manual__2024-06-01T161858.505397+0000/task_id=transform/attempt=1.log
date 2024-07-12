@@ -1,0 +1,40 @@
+[2024-06-01T16:19:07.388+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-01T16:19:07.434+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dag.transform manual__2024-06-01T16:18:58.505397+00:00 [queued]>
+[2024-06-01T16:19:07.447+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dag.transform manual__2024-06-01T16:18:58.505397+00:00 [queued]>
+[2024-06-01T16:19:07.447+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-01T16:19:07.475+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform> on 2024-06-01 16:18:58.505397+00:00
+[2024-06-01T16:19:07.513+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=434) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-01T16:19:07.515+0000] {standard_task_runner.py:63} INFO - Started process 436 to run task
+[2024-06-01T16:19:07.512+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_dag', 'transform', 'manual__2024-06-01T16:18:58.505397+00:00', '--job-id', '173', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp071ayvz5']
+[2024-06-01T16:19:07.516+0000] {standard_task_runner.py:91} INFO - Job 173: Subtask transform
+[2024-06-01T16:19:07.544+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-01T16:19:07.600+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_dag.transform manual__2024-06-01T16:18:58.505397+00:00 [running]> on host c5ef054da447
+[2024-06-01T16:19:07.749+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-01T16:18:58.505397+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-01T16:18:58.505397+00:00'
+[2024-06-01T16:19:07.751+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-01T16:19:07.927+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-01T16:19:07.928+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl_dag.py", line 42, in transform
+    pdf_link = soup.find("a", title="Sheet nhạc bài Chờ ngày lời hứa nở hoa")['href']  # Adjust selector
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+[2024-06-01T16:19:07.944+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_dag, task_id=transform, run_id=manual__2024-06-01T16:18:58.505397+00:00, execution_date=20240601T161858, start_date=20240601T161907, end_date=20240601T161907
+[2024-06-01T16:19:07.983+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 173 for task transform ('NoneType' object is not subscriptable; 436)
+[2024-06-01T16:19:08.016+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-01T16:19:08.043+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-01T16:19:08.046+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

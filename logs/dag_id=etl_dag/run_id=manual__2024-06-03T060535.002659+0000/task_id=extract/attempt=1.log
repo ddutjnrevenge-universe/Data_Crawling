@@ -1,0 +1,40 @@
+[2024-06-03T06:05:37.100+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-03T06:05:37.145+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dag.extract manual__2024-06-03T06:05:35.002659+00:00 [queued]>
+[2024-06-03T06:05:37.156+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dag.extract manual__2024-06-03T06:05:35.002659+00:00 [queued]>
+[2024-06-03T06:05:37.158+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-03T06:05:37.173+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract> on 2024-06-03 06:05:35.002659+00:00
+[2024-06-03T06:05:37.198+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=5213) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-03T06:05:37.198+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_dag', 'extract', 'manual__2024-06-03T06:05:35.002659+00:00', '--job-id', '292', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpy3wa_8nq']
+[2024-06-03T06:05:37.200+0000] {standard_task_runner.py:63} INFO - Started process 5215 to run task
+[2024-06-03T06:05:37.201+0000] {standard_task_runner.py:91} INFO - Job 292: Subtask extract
+[2024-06-03T06:05:37.225+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-03T06:05:37.272+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_dag.extract manual__2024-06-03T06:05:35.002659+00:00 [running]> on host aa989158b36e
+[2024-06-03T06:05:37.379+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2024-06-03T06:05:35.002659+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-03T06:05:35.002659+00:00'
+[2024-06-03T06:05:37.382+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-03T06:05:37.716+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-03T06:05:37.718+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl_dag.py", line 41, in extract
+    song['lyrics'] = song['lyrics'].replace(song['author'], "").strip()
+                     ~~~~^^^^^^^^^^
+KeyError: 'lyrics'
+[2024-06-03T06:05:37.763+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_dag, task_id=extract, run_id=manual__2024-06-03T06:05:35.002659+00:00, execution_date=20240603T060535, start_date=20240603T060537, end_date=20240603T060537
+[2024-06-03T06:05:37.787+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 292 for task extract ('lyrics'; 5215)
+[2024-06-03T06:05:37.818+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-03T06:05:37.846+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-03T06:05:37.850+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

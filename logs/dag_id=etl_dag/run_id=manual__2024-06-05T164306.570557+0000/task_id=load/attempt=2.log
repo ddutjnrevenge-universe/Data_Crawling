@@ -1,0 +1,59 @@
+[2024-06-05T16:48:43.545+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T16:48:43.590+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-05T16:43:06.570557+00:00 [queued]>
+[2024-06-05T16:48:43.602+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-05T16:43:06.570557+00:00 [queued]>
+[2024-06-05T16:48:43.603+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-06-05T16:48:43.618+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load> on 2024-06-05 16:43:06.570557+00:00
+[2024-06-05T16:48:43.637+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=270) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-05T16:48:43.636+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_dag', 'load', 'manual__2024-06-05T16:43:06.570557+00:00', '--job-id', '335', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpajc9hoam']
+[2024-06-05T16:48:43.639+0000] {standard_task_runner.py:63} INFO - Started process 272 to run task
+[2024-06-05T16:48:43.640+0000] {standard_task_runner.py:91} INFO - Job 335: Subtask load
+[2024-06-05T16:48:43.660+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-05T16:48:43.706+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_dag.load manual__2024-06-05T16:43:06.570557+00:00 [running]> on host aa989158b36e
+[2024-06-05T16:48:43.928+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dag' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-06-05T16:43:06.570557+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-05T16:43:06.570557+00:00'
+[2024-06-05T16:48:43.930+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T16:48:44.049+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/google/cloud/firestore_v1/base_collection.py:302 UserWarning: Detected filter using positional arguments. Prefer using the 'filter' keyword argument instead.
+[2024-06-05T16:48:46.178+0000] {logging_mixin.py:188} INFO - Document with title 'Thánh Vịnh 138 (Thánh Gioan Baotixita)' already exists, updated the document.
+[2024-06-05T16:48:46.183+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T16:48:46.186+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl_dag.py", line 124, in load
+    upload_pdf_to_firebase(song['pdf_url'], f"{song['title'].replace(' ', '_')}.pdf")
+  File "/opt/airflow/dags/etl_dag.py", line 104, in upload_pdf_to_firebase
+    response = requests.get(pdf_url)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL '/downloadPDF.php?id=6972': No scheme supplied. Perhaps you meant https:///downloadPDF.php?id=6972?
+[2024-06-05T16:48:46.236+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=etl_dag, task_id=load, run_id=manual__2024-06-05T16:43:06.570557+00:00, execution_date=20240605T164306, start_date=20240605T164843, end_date=20240605T164846
+[2024-06-05T16:48:46.274+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 335 for task load (Invalid URL '/downloadPDF.php?id=6972': No scheme supplied. Perhaps you meant https:///downloadPDF.php?id=6972?; 272)
+[2024-06-05T16:48:46.312+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-05T16:48:46.339+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-05T16:48:46.343+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,21 @@
+[2024-06-03T04:17:26.202+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-03T04:17:26.233+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-03T04:16:58.711407+00:00 [queued]>
+[2024-06-03T04:17:26.244+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-03T04:16:58.711407+00:00 [queued]>
+[2024-06-03T04:17:26.245+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-03T04:17:26.259+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load> on 2024-06-03 04:16:58.711407+00:00
+[2024-06-03T04:17:26.283+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2422) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-03T04:17:26.282+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_dag', 'load', 'manual__2024-06-03T04:16:58.711407+00:00', '--job-id', '265', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpta8oqlpt']
+[2024-06-03T04:17:26.285+0000] {standard_task_runner.py:63} INFO - Started process 2428 to run task
+[2024-06-03T04:17:26.285+0000] {standard_task_runner.py:91} INFO - Job 265: Subtask load
+[2024-06-03T04:17:26.305+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-03T04:17:26.356+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_dag.load manual__2024-06-03T04:16:58.711407+00:00 [running]> on host aa989158b36e
+[2024-06-03T04:17:26.459+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dag' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-06-03T04:16:58.711407+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-03T04:16:58.711407+00:00'
+[2024-06-03T04:17:26.461+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-03T04:17:26.491+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/google/cloud/firestore_v1/base_collection.py:302 UserWarning: Detected filter using positional arguments. Prefer using the 'filter' keyword argument instead.
+[2024-06-03T04:17:27.387+0000] {logging_mixin.py:188} INFO - {'title': 'Thánh Ca ISAIA (Is 12)', 'author': 'Lm. Huy Hoàng', 'lyrics': 'Bản phổ nhạc Sách Ngôn Sứ Isaia, chương 12, câu 2 đến câu 6 của:+ Lm. Thái Nguyên;+ Lm. Xuân Thảo;+ ;+ và bản hát với giọng 3 Âm kèm Có sheet Piano của ông Gioan Mai Tam, thành viên Ban thánh nhạc giáo phận Phan Thiết.\nPhần giai thoại, ngoài một số có tính chất hàn lâm từ người bình, còn lại một số chỉ mang tính chất không hơn những câu chuyện tám bên bóng cây cho vui, cho khuây khỏa, như tiêu chí của Nhacnheo.com. Bởi lẽ đó, mạn phép xin đừng đề cao quan điểm của tính xác thực lắm.', 'original_url': 'https://nhacnheo.com/images/sheet/pdf/thanh-ca-isaia-is-12-lm-huy-hoang-nhacnheo.com.pdf'}
+[2024-06-03T04:17:33.291+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-03T04:17:33.292+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-03T04:17:33.302+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=etl_dag, task_id=load, run_id=manual__2024-06-03T04:16:58.711407+00:00, execution_date=20240603T041658, start_date=20240603T041726, end_date=20240603T041733
+[2024-06-03T04:17:33.342+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-03T04:17:33.360+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-03T04:17:33.363+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,41 @@
+[2024-06-01T17:18:01.075+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-01T17:18:01.131+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-01T17:12:24.384409+00:00 [queued]>
+[2024-06-01T17:18:01.140+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dag.load manual__2024-06-01T17:12:24.384409+00:00 [queued]>
+[2024-06-01T17:18:01.141+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-06-01T17:18:01.164+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load> on 2024-06-01 17:12:24.384409+00:00
+[2024-06-01T17:18:01.188+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1343) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-01T17:18:01.189+0000] {standard_task_runner.py:63} INFO - Started process 1351 to run task
+[2024-06-01T17:18:01.190+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_dag', 'load', 'manual__2024-06-01T17:12:24.384409+00:00', '--job-id', '207', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpr9exyfva']
+[2024-06-01T17:18:01.193+0000] {standard_task_runner.py:91} INFO - Job 207: Subtask load
+[2024-06-01T17:18:01.213+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-01T17:18:01.254+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_dag.load manual__2024-06-01T17:12:24.384409+00:00 [running]> on host c5ef054da447
+[2024-06-01T17:18:01.386+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dag' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-06-01T17:12:24.384409+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-01T17:12:24.384409+00:00'
+[2024-06-01T17:18:01.388+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-01T17:18:01.438+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/google/cloud/firestore_v1/base_collection.py:302 UserWarning: Detected filter using positional arguments. Prefer using the 'filter' keyword argument instead.
+[2024-06-01T17:18:02.758+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-01T17:18:02.759+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl_dag.py", line 102, in load
+    existing_doc_ref.update({
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'update'
+[2024-06-01T17:18:02.791+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=etl_dag, task_id=load, run_id=manual__2024-06-01T17:12:24.384409+00:00, execution_date=20240601T171224, start_date=20240601T171801, end_date=20240601T171802
+[2024-06-01T17:18:02.814+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 207 for task load ('list' object has no attribute 'update'; 1351)
+[2024-06-01T17:18:02.854+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-01T17:18:02.872+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-01T17:18:02.875+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
