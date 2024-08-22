@@ -1,1 +1,3 @@
 /dags/firebase-service-account.json
+/logs
+/dags/__pycache__

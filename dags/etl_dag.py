@@ -90,7 +90,7 @@ def upload_to_database(song):
             "title": song['title'],
             "author": song['author'],
             "lyrics": song['lyrics'],
-            "original_url": song['pdf_url'],
+            "origin_url": song['pdf_url'],
             "braille_url": None,
             "timestamp": firestore.SERVER_TIMESTAMP
         }
@@ -101,7 +101,7 @@ def upload_to_database(song):
         existing_doc_ref.update({
             "author": song['author'],
             "lyrics": song['lyrics'],
-            "original_url": song['pdf_url'],
+            "origin_url": song['pdf_url'],
             "braille_url": None,
             "timestamp": firestore.SERVER_TIMESTAMP
         })
@@ -110,7 +110,7 @@ def upload_to_database(song):
 # upload pdf file from song['pdf_url'] to firebase storage in folder named original
 def upload_pdf_to_firebase(pdf_url, file_name):
     # check if the file with same song title already exists in the storage
-    blob = bucket.blob(f"original/{file_name}")
+    blob = bucket.blob(f"origin/nhacnheo/{file_name}")
     if not blob.exists():
         response = requests.get(pdf_url)
         with tempfile.NamedTemporaryFile(delete=False) as temp_file:
@@ -133,7 +133,7 @@ def load(**kwargs):
     with open(save_path, 'w') as f:
         f.write(str(songs))
     for song in songs:
-        upload_to_database(song)
+        # upload_to_database(song)
         upload_pdf_to_firebase(song['pdf_url'], f"{song['title'].replace(' ', '_')}.pdf")
 
 
