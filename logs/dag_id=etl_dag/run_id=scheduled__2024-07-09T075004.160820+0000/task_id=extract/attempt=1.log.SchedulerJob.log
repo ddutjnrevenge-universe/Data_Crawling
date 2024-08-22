@@ -1,1 +1,0 @@
-[2024-07-11T15:44:08.216+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: etl_dag.extract scheduled__2024-07-09T07:50:04.160820+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?
