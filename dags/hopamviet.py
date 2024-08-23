@@ -156,7 +156,7 @@ def upload_file_to_firebase(file_url, title):
     else:
         return blob.public_url
 
-def crawl_pages(start_url, end_url, step=100):
+def crawl_pages(start_url, end_url, step=3):
     base_url = start_url.rsplit('/', 1)[0]
     start_index = int(start_url.rsplit('/', 1)[1])
     end_index = int(end_url.rsplit('/', 1)[1])
@@ -171,6 +171,9 @@ def crawl_pages(start_url, end_url, step=100):
             max_row_index = min(99, len(rows) - 1)  # Crawl up to row 99 or the max row index
             for row_index in range(max_row_index + 1):
                 song = extract_data_from_row(url, row_index=row_index)
+                # print(song)
+                # Print song details to the console to track progress
+                print(f"Extracted song {i + row_index + 1}/{end_index + 1}: {song['title']}")
                 if song:
                     songs.append(song)
         except Exception as e:
@@ -188,6 +191,7 @@ def transform(**kwargs):
         for file_url in song.get('files', []):
             file_name = f"{song['title'].replace(' ', '_')}{os.path.splitext(file_url)[1]}"
             song['file_url'] = upload_file_to_firebase(file_url, song['title'])
+    print(len(songs))
     return songs
 
 def load(**kwargs):
